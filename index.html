@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Purohit | Frontend Engineer & Web Solutions</title>
+  
+  <!-- High-Tech Typography: Plus Jakarta Sans + Space Grotesk + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            nordic: {
+              bg: '#0b0f17',         // Deep slate-navy
+              surface: '#111827',    // Frosted card
+              cardLight: '#162235',  // Hovered card
+              border: '#1e293b',     // Cold steel border
+              cyan: '#06b6d4',       // Core electric cyan accent
+              cyanGlow: '#22d3ee',   // Ambient neon
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Interactive Spotlight Shader Style */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, -1000px);
+      left: var(--mouse-x, -1000px);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15), transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      z-index: 1;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-nordic-bg text-slate-100 font-sans antialiased selection:bg-nordic-cyan selection:text-slate-950 pb-20">
+
+  <!-- Ambient Cyan Aurora Background -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[380px] bg-cyan-500/10 blur-[150px] pointer-events-none rounded-full"></div>
+
+  <!-- Announcement Bar -->
+  <div class="bg-nordic-surface/80 border-b border-nordic-border py-2 px-4 text-center text-xs backdrop-blur-md">
+    <div class="inline-flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+      <span class="text-slate-300 font-medium">Accepting New Client Builds & Engineering Contracts</span>
+      <span class="text-slate-600 hidden sm:inline">•</span>
+      <span class="text-cyan-400 font-mono hidden sm:inline text-[11px]">Turnaround: 3 to 7 Days</span>
+    </div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-40 bg-nordic-bg/85 backdrop-blur-md border-b border-nordic-border">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-nordic-cyan/10 border border-nordic-cyan/30 flex items-center justify-center text-nordic-cyan font-display font-black text-lg group-hover:scale-105 group-hover:border-nordic-cyan transition-all shadow-md shadow-cyan-500/10">
+          AP
+        </div>
+        <div>
+          <span class="font-display font-bold tracking-tight text-lg text-slate-100 block leading-tight">Aditya Purohit</span>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-nordic-cyan block">Web Solutions Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-400 font-mono">
+        <a href="#work" class="hover:text-cyan-400 transition">/case-studies</a>
+        <a href="#deliverables" class="hover:text-cyan-400 transition">/architecture</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">/contact</a>
+      </nav>
+
+      <!-- Primary Action Button -->
+      <a href="https://wa.me/918920799688?text=Hi%20Aditya!%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20project." 
+         target="_blank"
+         class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 transition-all shadow-lg shadow-cyan-500/20 active:scale-95">
+        <span>Start Project</span>
+        <span>→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-6 pt-16 pb-12 md:py-24 relative">
+    <div class="max-w-3xl space-y-6">
+      
+      <div class="inline-flex items-center gap-2 bg-nordic-surface border border-cyan-500/30 px-3.5 py-1.5 rounded-full shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+        <span class="text-xs font-mono text-cyan-300">Modern Frontend & Commercial Storefronts</span>
+      </div>
+
+      <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-100 leading-[1.12]">
+        Engineering lightning-fast digital storefronts that <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400">
+          capture high-ticket leads.
+        </span>
+      </h1>
+
+      <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+        Helping consumer brands, travel agencies, and local services cut platform commissions and increase customer conversion. Built with zero runtime bloat for sub-second mobile loading.
+      </p>
+
+      <!-- Metrics Row -->
+      <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+        <div class="p-4 bg-nordic-surface border border-nordic-border rounded-2xl">
+          <div class="text-slate-500 text-[10px] uppercase">Load Performance</div>
+          <div class="text-cyan-400 font-bold text-sm mt-0.5">&lt; 500ms Edge</div>
+        </div>
+        <div class="p-4 bg-nordic-surface border border-nordic-border rounded-2xl">
+          <div class="text-slate-500 text-[10px] uppercase">Architecture</div>
+          <div class="text-slate-200 font-bold text-sm mt-0.5">Mobile-First UI</div>
+        </div>
+        <div class="p-4 bg-nordic-surface border border-nordic-border rounded-2xl">
+          <div class="text-slate-500 text-[10px] uppercase">Checkout Engine</div>
+          <div class="text-cyan-400 font-bold text-sm mt-0.5">Direct WhatsApp / UPI</div>
+        </div>
+        <div class="p-4 bg-nordic-surface border border-nordic-border rounded-2xl">
+          <div class="text-slate-500 text-[10px] uppercase">Infrastructure</div>
+          <div class="text-slate-200 font-bold text-sm mt-0.5">Global Edge CDN</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Tiered Case Studies -->
+  <section id="work" class="max-w-6xl mx-auto px-6 py-16 border-t border-nordic-border">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400">Production Deployments</span>
+        <h2 class="font-display text-3xl font-extrabold mt-1">Tiered Client Showcase</h2>
+        <p class="text-slate-400 text-sm mt-1">Three distinct architectural systems solving specific business objectives.</p>
+      </div>
+      <div class="text-xs font-mono text-slate-500">
+        All 3 Systems Verified on Production
+      </div>
+    </div>
+
+    <div class="space-y-10">
+
+      <!-- PROJECT 1: Tier 1 (Apex Fit) -->
+      <article class="spotlight-card bg-nordic-surface border border-nordic-border hover:border-cyan-500/50 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-cyan-950/40 group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">
+                Tier 1 • Rapid Lead Capture
+              </span>
+              <span class="text-slate-500 text-xs font-mono">Boutique Fitness Studios</span>
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+              Apex Strength & Conditioning
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              A high-impact single-page capture engine built for modern fitness facilities. Replaces cumbersome multi-field contact forms with a one-tap WhatsApp trial booking system to eliminate drop-off.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Semantic HTML5</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Tailwind Utility Engine</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Instant Lead Routing</span>
+            </div>
+
+            <div class="pt-4 flex items-center gap-4">
+              <a href="https://apex-fit-demo.vercel.app" target="_blank" class="bg-slate-100 hover:bg-white text-slate-950 font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                <span>Launch Live Demo</span>
+                <span>↗</span>
+              </a>
+              <span class="text-xs text-slate-500 font-mono">Hosted on Vercel CDN</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-nordic-border bg-nordic-bg group-hover:border-cyan-500/30 transition-colors">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Apex Fit Demo" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Tier 2 (Himalayan Trails) -->
+      <article class="spotlight-card bg-nordic-surface border border-nordic-border hover:border-cyan-500/50 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-cyan-950/40 group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="bg-sky-500/10 text-sky-300 border border-sky-500/30 text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">
+                Tier 2 • Multi-Page Expedition Portal
+              </span>
+              <span class="text-slate-500 text-xs font-mono">Adventure Travel & Trekking Operators</span>
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+              Himalayan Trails Co.
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              An expedition booking portal featuring dynamic DOM category filtering, accordion-driven safety guidelines, and dedicated route itineraries with altitude progression charts.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Multi-Page Architecture</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Vanilla JavaScript (DOM)</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Dynamic Filter Engine</span>
+            </div>
+
+            <div class="pt-4 flex items-center gap-4">
+              <a href="https://himalayan-trek-agency.vercel.app" target="_blank" class="bg-slate-100 hover:bg-white text-slate-950 font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2">
+                <span>Launch Live Demo</span>
+                <span>↗</span>
+              </a>
+              <span class="text-xs text-slate-500 font-mono">Hosted on Vercel CDN</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-nordic-border bg-nordic-bg group-hover:border-cyan-500/30 transition-colors">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Himalayan Trails Demo" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: Tier 3 (Nocturne) -->
+      <article class="spotlight-card bg-nordic-surface border border-cyan-500/40 hover:border-cyan-400 rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-cyan-500/10 group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-md">
+                Tier 3 • Full-State Retail App
+              </span>
+              <span class="text-slate-500 text-xs font-mono">Micro-Roasteries & Cloud Kitchens</span>
+            </div>
+
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+              NOCTURNE Terminal & Roastery
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              An interactive online ordering terminal featuring non-intrusive floating trays, automated GST and packaging calculations, persistent storage with <code class="text-cyan-400 font-mono">localStorage</code>, and a dedicated multi-stage payment gateway simulator.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Reactive State Store</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">localStorage API</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Tax & Ledger Math</span>
+              <span class="text-[11px] font-mono bg-nordic-bg border border-nordic-border text-slate-300 px-3 py-1 rounded-lg">Simulated Payment Flow</span>
+            </div>
+
+            <div class="pt-4 flex items-center gap-4">
+              <a href="https://cafe-ordering-system-three-theta.vercel.app" target="_blank" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-slate-950 font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-lg shadow-cyan-500/20 active:scale-95 flex items-center gap-2">
+                <span>Launch Application</span>
+                <span>↗</span>
+              </a>
+              <span class="text-xs text-cyan-400 font-mono">Dedicated Checkout Engine</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-nordic-border bg-nordic-bg group-hover:border-cyan-400/50 transition-colors">
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Nocturne Demo" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Complete Architecture Scope -->
+  <section id="deliverables" class="max-w-6xl mx-auto px-6 py-16 border-t border-nordic-border">
+    <div class="max-w-2xl mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-cyan-400">Technical Scope</span>
+      <h2 class="font-display text-3xl font-extrabold mt-1">Full-Stack Deliverables</h2>
+      <p class="text-slate-400 text-sm mt-1">Every project is handed over with complete technical wiring, ready for live operations.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="bg-nordic-surface border border-nordic-border p-6 rounded-3xl space-y-3 hover:border-cyan-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-nordic-bg border border-nordic-border flex items-center justify-center text-lg">⚡</div>
+        <h3 class="font-display font-bold text-base text-slate-100">Zero-Bloat Performance</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Clean semantic HTML5 and vanilla DOM operations without massive npm bundles. Fast initial paint on mobile devices even with weak connectivity.
+        </p>
+      </div>
+
+      <div class="bg-nordic-surface border border-nordic-border p-6 rounded-3xl space-y-3 hover:border-cyan-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-nordic-bg border border-nordic-border flex items-center justify-center text-lg">🌐</div>
+        <h3 class="font-display font-bold text-base text-slate-100">Domain & DNS Setup</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Full management of your custom domain (.in / .com), automated SSL security certificates, and global edge routing on Cloudflare or Vercel.
+        </p>
+      </div>
+
+      <div class="bg-nordic-surface border border-nordic-border p-6 rounded-3xl space-y-3 hover:border-cyan-500/40 transition">
+        <div class="w-10 h-10 rounded-xl bg-nordic-bg border border-nordic-border flex items-center justify-center text-lg">📲</div>
+        <h3 class="font-display font-bold text-base text-slate-100">Direct WhatsApp Funnel</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Replacing easily missed contact emails with pre-compiled, itemized WhatsApp order payloads and one-tap customer calls.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final CTA Card -->
+  <section id="contact" class="max-w-6xl mx-auto px-6 py-20 border-t border-nordic-border">
+    <div class="bg-gradient-to-b from-nordic-surface to-nordic-cardLight border border-nordic-border rounded-3xl p-8 sm:p-14 text-center max-w-3xl mx-auto space-y-6 relative overflow-hidden shadow-2xl">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-cyan-500/10 blur-3xl pointer-events-none"></div>
+
+      <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-3.5 py-1.5 rounded-full border border-cyan-500/30">
+        Direct Partnership
+      </span>
+
+      <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
+        Ready to build your brand’s next digital storefront?
+      </h2>
+
+      <p class="text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
+        Let’s audit your current web presence and construct a customized, production-ready solution that works without ongoing technical headaches.
+      </p>
+
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/918920799688?text=Hi%20Aditya!%20I'm%20looking%20to%20build%20a%20website%20for%20my%20business." 
+           target="_blank"
+           class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-cyan-500/20 active:scale-95">
+          Chat on WhatsApp →
+        </a>
+        <a href="mailto:aditya@example.com" class="w-full sm:w-auto bg-nordic-surface hover:bg-nordic-bg border border-nordic-border text-slate-300 font-bold px-6 py-3.5 rounded-xl text-xs transition active:scale-95">
+          Direct Email Inquiry
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Glass Quick-Contact Dock -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <a href="https://wa.me/918920799688?text=Hi%20Aditya!%20I'd%20like%20to%20discuss%20a%20project." 
+       target="_blank"
+       class="group flex items-center gap-2.5 bg-nordic-surface/90 hover:bg-nordic-cardLight text-slate-100 border border-nordic-border hover:border-cyan-400/60 px-4 py-3 rounded-full backdrop-blur-md shadow-2xl shadow-black/80 transition-all duration-300 hover:scale-105 active:scale-95">
+      
+      <!-- Live Status Ring -->
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400"></span>
+      </span>
+
+      <span class="text-xs font-bold tracking-wide">Quick WhatsApp Chat</span>
+      <span class="text-cyan-400 group-hover:translate-x-0.5 transition-transform text-xs">→</span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-nordic-border py-8 bg-nordic-bg text-center text-xs font-mono text-slate-500">
+    <p>© 2026 Aditya Purohit. High-Performance Web Solutions.</p>
+  </footer>
+
+  <!-- Cursor Spotlight Tracking Script -->
+  <script>
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  </script>
+</body>
+</html>
